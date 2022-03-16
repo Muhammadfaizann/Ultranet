@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+             x:Class="Ultranet.App">
+    <Application.Resources>
+        <Color x:Key="UltranetWhite">#FFFFFF</Color>
+        <Color x:Key="UltranetSecondary">#18181B</Color>
+        <Color x:Key="UltranetPrimary" >#3DC1F2</Color>
+        <Color x:Key="UltranetPrimaryDark">#1A2328</Color>
+        <Color x:Key="UltranetPrimaryDarkLighten">#1F3F51</Color>
+        <Color x:Key="UltranetComponentBackground" >#202222</Color>
+        <Color x:Key="UltranetPrimaryLight" >#F0F7F9</Color>
+        <Color x:Key="UltranetPrimaryDark1" >#1E5468</Color>
+        <Color x:Key="UltranetComponentBackgroundLight" >#FBFEFF</Color>
+
+        <Color x:Key="UltranetAccountTextColor" >#7199A8</Color>
+        
+        <Color x:Key="UltranetAddressTextDarkColor">#6C6C6C</Color>
+        <Color x:Key="UltranetAddressTextLightColor">#91A0A6</Color>
+        <Color x:Key="UltranetAccountFrameDarkColor1">#4900E3</Color>
+        <Color x:Key="UltranetAccountFrameDarkColor2">#8D00E3</Color>
+        <Color x:Key="UltranetAccountFrameLightColor1">#7BEDAA</Color>
+        <Color x:Key="UltranetAccountFrameLightColor2">#A78AF9</Color>
+        <Color x:Key="UltranetRestoreAccountTextColor">#65AFD6</Color>
+        <Style x:Key="Random_SemiBold"
+               TargetType="Label">
+            <Setter Property="TextColor"
+                    Value="{AppThemeBinding Light={StaticResource UltranetAccountTextColor}, Dark={StaticResource UltranetPrimaryDark1}}" />
+            <Setter Property="HorizontalTextAlignment"
+                    Value="Start" />
+            <Setter Property="VerticalOptions"
+                    Value="Center" />
+            <Setter Property="FontFamily"
+                    Value="MontserratSemiBold" />
+        </Style>
+        <Style x:Key="PrimaryDark_White_SemiBold" TargetType="Label">
+            <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource UltranetPrimaryDark1}, Dark={StaticResource UltranetWhite}}" />
+            <Setter Property="HorizontalTextAlignment" Value="Start" />
+            <Setter Property="VerticalOptions" Value="Center" />
+            <Setter Property="FontFamily" Value="MontserratSemiBold" />
+        </Style>
+        <Style x:Key="PrimaryDarkLighten_Primary_SemiBold" TargetType="Label">
+            <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource UltranetPrimaryDarkLighten}, Dark={StaticResource UltranetPrimary}}" />
+            <Setter Property="HorizontalTextAlignment" Value="Start" />
+            <Setter Property="VerticalOptions" Value="Center" />
+            <Setter Property="FontFamily" Value="MontserratSemiBold" />
+        </Style>
+        <Style x:Key="PrimaryDarkLighten_Primary_Medium" TargetType="Label">
+            <Setter Property="TextColor"
+                    Value="{AppThemeBinding Light={StaticResource UltranetPrimaryDarkLighten}, Dark={StaticResource UltranetWhite}}" />
+            <Setter Property="HorizontalTextAlignment" Value="Start" />
+            <Setter Property="VerticalOptions" Value="Center" />
+            <Setter Property="FontSize"
+                    Value="12" />
+            <Setter Property="FontFamily"
+                    Value="MontserratMedium" />
+        </Style>
+        <Style x:Key="PrimaryDarkLighten_White_Regular" TargetType="Label">
+            <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource UltranetPrimaryDarkLighten}, Dark={StaticResource UltranetWhite}}" />
+            <Setter Property="HorizontalTextAlignment" Value="Start" />
+            <Setter Property="VerticalOptions" Value="Center" />
+            <Setter Property="FontFamily" Value="MontserratRegular" />
+        </Style>
+        <Style x:Key="PrimaryDarkLighten_White_SemiBold" TargetType="Label">
+            <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource UltranetPrimaryDarkLighten}, Dark={StaticResource UltranetWhite}}" />
+            <Setter Property="HorizontalTextAlignment" Value="Start" />
+            <Setter Property="VerticalOptions" Value="Center" />
+            <Setter Property="FontFamily" Value="MontserratSemiBold" />
+        </Style>
+        <Style x:Key="ComponentBackgroundLight_ComponentBackground_Bold" TargetType="Label">
+            <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource UltranetComponentBackgroundLight}, Dark={StaticResource UltranetComponentBackground}}" />
+            <Setter Property="HorizontalTextAlignment" Value="Start" />
+            <Setter Property="VerticalOptions" Value="Center" />
+            <Setter Property="FontFamily" Value="MontserratSemiBold" />
+        </Style>
+        <Style x:Key="Address_Light" TargetType="Label">
+            <Setter Property="TextColor"
+                    Value="{AppThemeBinding Light={StaticResource UltranetAddressTextLightColor}, Dark={StaticResource UltranetAddressTextDarkColor}}" />
+            <Setter Property="HorizontalTextAlignment" Value="Start" />
+            <Setter Property="VerticalOptions" Value="Center" />
+            <Setter Property="FontFamily"
+                    Value="MontserratLight" />
+        </Style>
+        
+        <Style x:Key="NormalLabelStyle3" TargetType="Label">
+            <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource UltranetAccountTextColor},Dark={StaticResource UltranetWhite}}" />
+            <Setter Property="HorizontalTextAlignment" Value="Start" />
+            <Setter Property="VerticalOptions" Value="Center" />
+            <Setter Property="FontFamily"
+                    Value="MontserratMedium" />
+        </Style>
+        <Style x:Key="NormalFrameStyle" TargetType="Frame">
+            <Setter Property="CornerRadius" Value="0" />
+            <Setter Property="BorderColor" Value="{AppThemeBinding Light={StaticResource UltranetPrimaryDarkLighten}, Dark={StaticResource UltranetPrimary}}" />
+            <Setter Property="BackgroundColor" Value="Transparent"/>
+        </Style>
+        
+    </Application.Resources>
+</Application>

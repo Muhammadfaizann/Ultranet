@@ -1,0 +1,357 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Grid xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:forms="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+             x:Class="Ultranet.Screens.Dashboard"
+             RowDefinitions="auto,auto,auto,auto,auto,auto,auto,auto,auto,auto">
+             <Label Grid.Row="0" Text="Accounts" Style="{StaticResource PrimaryDarkLighten_Primary_SemiBold}" FontAttributes="Bold"/>
+             <Frame Grid.Row="1" Style="{StaticResource NormalFrameStyle}" >
+                 <CollectionView x:Name="accounts" HeightRequest="60" >
+                     <CollectionView.ItemTemplate>
+                         <DataTemplate>
+                             <StackLayout Orientation="Horizontal" Spacing="20">
+                        <Label Text="{Binding name}"
+                               FontSize="12"
+                               Style="{StaticResource PrimaryDarkLighten_White_Regular}" HorizontalOptions="StartAndExpand"></Label>
+                        <Label Text="{Binding address}"
+                               FontSize="12"
+                               Style="{StaticResource PrimaryDarkLighten_White_Regular}" HorizontalOptions="CenterAndExpand"></Label>
+                        <Label HorizontalOptions="EndAndExpand"
+                               FontSize="12"
+                               Style="{StaticResource PrimaryDarkLighten_White_SemiBold}">
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="{Binding coins}"  ></Span>
+                                    <Span Text=" UNT"
+                                          FontFamily="MontserratRegular"></Span>    
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                 </Label>
+                             </StackLayout>
+                         </DataTemplate>
+                     </CollectionView.ItemTemplate>
+                 </CollectionView>   
+             </Frame>
+             <Label Grid.Row="2"  Margin="0,10,0,0" Text="Transactions" Style="{StaticResource PrimaryDarkLighten_Primary_SemiBold}" FontAttributes="Bold"/>
+             <Frame Grid.Row="3" Style="{StaticResource NormalFrameStyle}" >
+        <Grid ColumnDefinitions="auto,15">
+            <CollectionView Grid.Column="0" x:Name="transactions"
+                            HeightRequest="60">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Orientation="Horizontal">
+                            <Label  FontSize="12" Style="{StaticResource PrimaryDarkLighten_White_Regular}"
+                                    HorizontalOptions="StartAndExpand">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="UNT transfer"
+                                              FontFamily="MontserratSemiBold"></Span>
+                                        <Span Text="{Binding transactiontext}"></Span>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            <StackLayout Grid.Column="1" Orientation="Vertical" HorizontalOptions="End">
+                <forms:SvgCachedImage  Aspect="AspectFit"
+                                       Source="{AppThemeBinding Light=processing.svg, Dark=processingdark.svg}"
+                                       DownsampleToViewSize="True"
+                                   HeightRequest="15"
+                                   WidthRequest="15"
+                                   HorizontalOptions="EndAndExpand"
+                                   VerticalOptions="Center"></forms:SvgCachedImage>
+                <forms:SvgCachedImage  Aspect="AspectFit"
+                                       Source="{AppThemeBinding Light=success.svg, Dark=successdark.svg}"
+                                       DownsampleToViewSize="True"
+                                       HeightRequest="15"
+                                       WidthRequest="15"
+                                       HorizontalOptions="EndAndExpand"
+                                       VerticalOptions="Center"></forms:SvgCachedImage>
+                <forms:SvgCachedImage  Aspect="AspectFit"
+                                       Source="{AppThemeBinding Light=declined.svg, Dark=declineddark.svg}"
+                                       DownsampleToViewSize="True"
+                                       HeightRequest="15"
+                                       WidthRequest="15"
+                                       HorizontalOptions="EndAndExpand"
+                                       VerticalOptions="Center"></forms:SvgCachedImage>
+            </StackLayout>
+        </Grid>
+    </Frame>
+    <StackLayout Grid.Row="4" 
+                 Margin="20,10,20,0"
+                 Orientation="Horizontal" VerticalOptions="Start">
+             <Label  Text="Accounts" Style="{StaticResource PrimaryDarkLighten_Primary_SemiBold}" FontSize="12" FontAttributes="Bold" HorizontalOptions="Start"/>
+        <Label  Text="10"
+                Style="{StaticResource PrimaryDarkLighten_White_SemiBold}"
+                FontSize="12"
+                FontAttributes="Bold" HorizontalOptions="EndAndExpand"/>
+             </StackLayout>
+    <StackLayout Grid.Row="5"
+                 Margin="20,0,20,0"
+                 Orientation="Horizontal" VerticalOptions="Start">
+        <Label  Text="Auctions (Outbinded)"
+                FontSize="12"
+                Style="{StaticResource PrimaryDarkLighten_Primary_SemiBold}" FontAttributes="Bold" HorizontalOptions="Start"/>
+        <Label  Text="0(0)"
+                FontSize="12"
+                Style="{StaticResource PrimaryDarkLighten_White_SemiBold}" FontAttributes="Bold" HorizontalOptions="EndAndExpand"/>
+             </StackLayout>
+    <StackLayout Grid.Row="6"
+                 Margin="20,0,20,0"
+                 Orientation="Horizontal" VerticalOptions="Start">
+        <Label  Text="Authors (renewal needed)"
+                FontSize="12"
+                Style="{StaticResource PrimaryDarkLighten_Primary_SemiBold}" FontAttributes="Bold" HorizontalOptions="Start"/>
+        <Label  Text="2(0)"
+                FontSize="12"
+                Style="{StaticResource PrimaryDarkLighten_White_SemiBold}" FontAttributes="Bold" HorizontalOptions="EndAndExpand"/>
+             </StackLayout>
+    <StackLayout Grid.Row="7"
+                 Margin="20,0,20,0"
+                 Orientation="Horizontal" VerticalOptions="Start">
+        <Label  Text="Products"
+                FontSize="12"
+                Style="{StaticResource PrimaryDarkLighten_Primary_SemiBold}" FontAttributes="Bold" HorizontalOptions="Start"/>
+        <Label  Text="4"
+                FontSize="12"
+                Style="{StaticResource PrimaryDarkLighten_White_SemiBold}" FontAttributes="Bold" HorizontalOptions="EndAndExpand"/>
+             </StackLayout>
+    <StackLayout Grid.Row="8"
+                 Margin="20,0,20,0"
+                 Orientation="Horizontal" VerticalOptions="Start">
+        <Label  Text="Releases (total/clean/compromised)"
+                FontSize="12"
+                Style="{StaticResource PrimaryDarkLighten_Primary_SemiBold}" FontAttributes="Bold" HorizontalOptions="Start"/>
+        <Label  Text="346/300/2"
+                FontSize="12"
+                Style="{StaticResource PrimaryDarkLighten_White_SemiBold}" FontAttributes="Bold" HorizontalOptions="EndAndExpand"/>
+             </StackLayout>
+    <StackLayout Grid.Row="9"
+                 Margin="20,0,20,0"
+                 Orientation="Horizontal" VerticalOptions="Start">
+        <Label  Text="Last Release"
+                FontSize="12"
+                Style="{StaticResource PrimaryDarkLighten_Primary_SemiBold}" FontAttributes="Bold" HorizontalOptions="Start"/>
+        <Label  Text="UOS 0.1.670"
+                FontSize="12"
+                Style="{StaticResource PrimaryDarkLighten_White_SemiBold}" FontAttributes="Bold" HorizontalOptions="EndAndExpand"/>
+             </StackLayout>
+             <Grid Grid.Row="10" Margin="0,25,0,0" RowDefinitions="*,*,*"  ColumnDefinitions="*,*,*,*" >
+        <StackLayout Orientation="Vertical"
+                     Grid.Column="0"
+                     Grid.Row="0">
+            <Frame HeightRequest="60"
+                   WidthRequest="60"
+                   HasShadow="False"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center"
+                   Padding="0"
+                   CornerRadius="10"
+                   BackgroundColor="{AppThemeBinding Light={StaticResource UltranetRestoreAccountTextColor}, Dark={StaticResource UltranetPrimaryDarkLighten}}">
+                <forms:SvgCachedImage   Aspect="AspectFit" Source="{AppThemeBinding Light=Accounts.svg, Dark=Accountsdark.svg}" DownsampleToViewSize="True" HeightRequest="25" WidthRequest="25" HorizontalOptions="Center" VerticalOptions="Center" ></forms:SvgCachedImage>
+            </Frame>
+            <Label 
+                   Text="Accounts"
+                   HorizontalOptions="Center"
+                   HorizontalTextAlignment="Center"
+                   Style="{StaticResource PrimaryDarkLighten_Primary_Medium}"/>
+        </StackLayout>
+        <StackLayout Orientation="Vertical"
+                     Grid.Column="1"
+                     Grid.Row="0">
+            <Frame HeightRequest="60"
+                   WidthRequest="60"
+                   HasShadow="False"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center"
+                   Padding="0"
+                   CornerRadius="10"
+                   BackgroundColor="{AppThemeBinding Light={StaticResource UltranetRestoreAccountTextColor}, Dark={StaticResource UltranetPrimaryDarkLighten}}">
+                <forms:SvgCachedImage   Aspect="AspectFit"
+                                        Source="{AppThemeBinding Light=Authors.svg, Dark=Authorsdark.svg}"
+                                        DownsampleToViewSize="True"
+                                        HeightRequest="25"
+                                        WidthRequest="25"
+                                        HorizontalOptions="Center"
+                                        VerticalOptions="Center"></forms:SvgCachedImage>
+            </Frame>
+            <Label 
+                   Text="Authors"
+                   HorizontalOptions="Center"
+                   HorizontalTextAlignment="Center"
+                   Style="{StaticResource PrimaryDarkLighten_Primary_Medium}" />
+        </StackLayout>
+        <StackLayout Orientation="Vertical"
+                     Grid.Column="2"
+                     Grid.Row="0">
+            <Frame HeightRequest="60"
+                   WidthRequest="60"
+                   HasShadow="False"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center"
+                   Padding="0"
+                   CornerRadius="10"
+                   BackgroundColor="{AppThemeBinding Light={StaticResource UltranetRestoreAccountTextColor}, Dark={StaticResource UltranetPrimaryDarkLighten}}">
+                <forms:SvgCachedImage   Aspect="AspectFit"
+                                        Source="{AppThemeBinding Light=Auctions.svg, Dark=Auctionsdark.svg}"
+                                        DownsampleToViewSize="True"
+                                        HeightRequest="25"
+                                        WidthRequest="25"
+                                        HorizontalOptions="Center"
+                                        VerticalOptions="Center"></forms:SvgCachedImage>
+            </Frame>
+            <Label Text="Auctions"
+                   HorizontalOptions="Center"
+                   HorizontalTextAlignment="Center"
+                   Style="{StaticResource PrimaryDarkLighten_Primary_Medium}" />
+        </StackLayout>
+        <StackLayout Orientation="Vertical"
+                     Grid.Column="3"
+                     Grid.Row="0">
+            <Frame HeightRequest="60"
+                   WidthRequest="60"
+                   HasShadow="False"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center"
+                   Padding="0"
+                   CornerRadius="10"
+                   BackgroundColor="{AppThemeBinding Light={StaticResource UltranetRestoreAccountTextColor}, Dark={StaticResource UltranetPrimaryDarkLighten}}">
+                <forms:SvgCachedImage   Aspect="AspectFit"
+                                        Source="{AppThemeBinding Light=Products.svg, Dark=Productsdark.svg}"
+                                        DownsampleToViewSize="True"
+                                        HeightRequest="25"
+                                        WidthRequest="25"
+                                        HorizontalOptions="Center"
+                                        VerticalOptions="Center"></forms:SvgCachedImage>
+            </Frame>
+            <Label Text="Products"
+                   HorizontalOptions="Center"
+                   HorizontalTextAlignment="Center"
+                   Style="{StaticResource PrimaryDarkLighten_Primary_Medium}" />
+        </StackLayout>
+        <StackLayout Orientation="Vertical"
+                     Grid.Column="0"
+                     Grid.Row="1">
+            <Frame HeightRequest="60"
+                   WidthRequest="60"
+                   HasShadow="False"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center"
+                   Padding="0"
+                   CornerRadius="10"
+                   BackgroundColor="{AppThemeBinding Light={StaticResource UltranetRestoreAccountTextColor}, Dark={StaticResource UltranetPrimaryDarkLighten}}">
+                <forms:SvgCachedImage   Aspect="AspectFit"
+                                        Source="{AppThemeBinding Light=Transactions.svg, Dark=Transactionsdark.svg}"
+                                        DownsampleToViewSize="True"
+                                        HeightRequest="25"
+                                        WidthRequest="25"
+                                        HorizontalOptions="Center"
+                                        VerticalOptions="Center"></forms:SvgCachedImage>
+            </Frame>
+            <Label Text="Transactions"
+                   HorizontalOptions="Center"
+                   HorizontalTextAlignment="Center"
+                   Style="{StaticResource PrimaryDarkLighten_Primary_Medium}" />
+        </StackLayout>
+         <StackLayout Orientation="Vertical"
+                     Grid.Column="1"
+                     Grid.Row="1">
+            <Frame HeightRequest="60"
+                   WidthRequest="60"
+                   HasShadow="False"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center"
+                   Padding="0"
+                   CornerRadius="10"
+                   BackgroundColor="{AppThemeBinding Light={StaticResource UltranetRestoreAccountTextColor}, Dark={StaticResource UltranetPrimaryDarkLighten}}">
+                <forms:SvgCachedImage   Aspect="AspectFit"
+                                        Source="{AppThemeBinding Light=Search.svg, Dark=Searchdark.svg}"
+                                        DownsampleToViewSize="True"
+                                        HeightRequest="25"
+                                        WidthRequest="25"
+                                        HorizontalOptions="Center"
+                                        VerticalOptions="Center"></forms:SvgCachedImage>
+            </Frame>
+            <Label Text="Search"
+                   HorizontalOptions="Center"
+                   HorizontalTextAlignment="Center"
+                   Style="{StaticResource PrimaryDarkLighten_Primary_Medium}" />
+        </StackLayout>
+        <StackLayout Orientation="Vertical"
+                     Grid.Column="2"
+                     Grid.Row="1">
+            <Frame HeightRequest="60"
+                   WidthRequest="60"
+                   HasShadow="False"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center"
+                   Padding="0"
+                   CornerRadius="10"
+                   BackgroundColor="{AppThemeBinding Light={StaticResource UltranetRestoreAccountTextColor}, Dark={StaticResource UltranetPrimaryDarkLighten}}">
+                <forms:SvgCachedImage   Aspect="AspectFit"
+                                        Source="{AppThemeBinding Light=Network.svg, Dark=Networkdark.svg}"
+                                        DownsampleToViewSize="True"
+                                        HeightRequest="25"
+                                        WidthRequest="25"
+                                        HorizontalOptions="Center"
+                                        VerticalOptions="Center"></forms:SvgCachedImage>
+            </Frame>
+            <Label Text="Network"
+                   HorizontalOptions="Center"
+                   HorizontalTextAlignment="Center"
+                   Style="{StaticResource PrimaryDarkLighten_Primary_Medium}" />
+        </StackLayout>
+        <StackLayout Orientation="Vertical"
+                     
+                     Grid.Column="3"
+                     Grid.Row="1">
+            <Frame HeightRequest="60"
+                   WidthRequest="60"
+                   HasShadow="False"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center"
+                   Padding="0"
+                   CornerRadius="10"
+                   BackgroundColor="{AppThemeBinding Light={StaticResource UltranetRestoreAccountTextColor}, Dark={StaticResource UltranetPrimaryDarkLighten}}">
+                <forms:SvgCachedImage   Aspect="AspectFit"
+                                        Source="{AppThemeBinding Light=ETHUNT.svg, Dark=ETHUNTdark.svg}"
+                                        DownsampleToViewSize="True"
+                                        HeightRequest="25"
+                                        WidthRequest="25"
+                                        HorizontalOptions="Center"
+                                        VerticalOptions="Center"></forms:SvgCachedImage>
+            </Frame>
+            <Label  Text="ETH-UNT
+Transfer"
+                   HorizontalOptions="Center"
+                   HorizontalTextAlignment="Center"
+                   Style="{StaticResource PrimaryDarkLighten_Primary_Medium}" />
+        </StackLayout>
+        <StackLayout Orientation="Vertical"
+                     Grid.Column="0"
+                     Grid.Row="2">
+            <Frame HeightRequest="60"
+                   WidthRequest="60"
+                   HasShadow="False"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center"
+                   Padding="0"
+                   CornerRadius="10"
+                   BackgroundColor="{AppThemeBinding Light={StaticResource UltranetRestoreAccountTextColor}, Dark={StaticResource UltranetPrimaryDarkLighten}}">
+                <forms:SvgCachedImage   Aspect="AspectFit"
+                                        Source="{AppThemeBinding Light=Help.svg, Dark=Helpdark.svg}"
+                                        DownsampleToViewSize="True"
+                                        HeightRequest="25"
+                                        WidthRequest="25"
+                                        HorizontalOptions="Center"
+                                        VerticalOptions="Center"></forms:SvgCachedImage>
+            </Frame>
+            <Label Text="Help"
+                   HorizontalOptions="Center"
+                   HorizontalTextAlignment="Center"
+                   Style="{StaticResource PrimaryDarkLighten_Primary_Medium}" />
+        </StackLayout>
+        </Grid>
+</Grid>

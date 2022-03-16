@@ -1,0 +1,21 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "db896dcb-260f-4ae9-90e8-12224a7248a7": {
+      "ProjectGuid": "db896dcb-260f-4ae9-90e8-12224a7248a7",
+      "DisplayName": "Ultranet",
+      "ColorIndex": 0
+    },
+    "fed24c4c-8b6b-4664-b1f0-1cd0a5add979": {
+      "ProjectGuid": "fed24c4c-8b6b-4664-b1f0-1cd0a5add979",
+      "DisplayName": "Ultranet.Android",
+      "ColorIndex": 1
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    }
+  },
+  "NextColorIndex": 2
+}

@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:forms="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+             x:Class="Ultranet.MasterPage"
+             BackgroundColor="{AppThemeBinding Light={StaticResource UltranetPrimaryLight}, Dark={StaticResource UltranetSecondary}}"
+             xmlns:screens="clr-namespace:Ultranet.Screens">
+    <Grid RowDefinitions="25,*" Margin="10" >
+        <StackLayout Grid.Row="0" Orientation="Horizontal" VerticalOptions="StartAndExpand">
+            <Label Text="Ultranet User Center" Style="{StaticResource PrimaryDark_White_SemiBold}"/>
+            <forms:SvgCachedImage
+                        Aspect="AspectFit"
+                        Source="{AppThemeBinding Light=notification.svg, Dark=notificationdark.svg}"
+                        DownsampleToViewSize="True"
+                        HeightRequest="30"
+                        WidthRequest="50"
+                        HorizontalOptions="EndAndExpand"
+                        VerticalOptions="Center">
+            </forms:SvgCachedImage>
+        </StackLayout>
+        <screens:Dashboard Grid.Row="1"  IsVisible="true"></screens:Dashboard>
+    </Grid>
+
+</ContentPage>
