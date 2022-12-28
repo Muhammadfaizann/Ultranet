@@ -1,3 +1,3 @@
 # Ultranet
 Crypto wallet 
-Crypto wallet project is on pause due to unfortunate circumstances in Ukraine as my client for this project is based there.
+A few demo screen designs for a crypto wallent project with xamarin forms.
